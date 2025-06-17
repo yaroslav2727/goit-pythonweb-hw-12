@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Verification</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Email Verification</h1>
+      </div>
+
+      <p>Hello <strong>{{ username }}</strong>,</p>
+
+      <p>
+        Thank you for registering with our Contacts API! To complete your
+        registration, please verify your email address by clicking the button
+        below:
+      </p>
+
+      <div style="text-align: center">
+        <a href="{{ host }}api/auth/confirmed_email/{{ token }}" class="button"
+          >Verify Email</a
+        >
+      </div>
+
+      <p>
+        If the button doesn't work, you can also copy and paste the following
+        link into your browser:
+      </p>
+      <p>
+        <a href="{{ host }}api/auth/confirmed_email/{{ token }}"
+          >{{ host }}api/auth/confirmed_email/{{ token }}</a
+        >
+      </p>
+
+      <div class="footer">
+        <p>If you didn't create an account, please ignore this email.</p>
+        <p>This link will expire in 7 days for security reasons.</p>
+      </div>
+    </div>
+  </body>
+</html>
