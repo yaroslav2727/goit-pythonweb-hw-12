@@ -11,6 +11,15 @@ origins = ["http://localhost:8000"]
 
 @app.exception_handler(RateLimitExceeded)
 async def rate_limit_handler(request: Request, exc: RateLimitExceeded):
+    """Handle rate limit exceeded exceptions.
+
+    Args:
+        request (Request): The incoming request that exceeded the rate limit.
+        exc (RateLimitExceeded): The rate limit exception that was raised.
+
+    Returns:
+        JSONResponse: A JSON response with HTTP 429 status and error message.
+    """
     return JSONResponse(
         status_code=status.HTTP_429_TOO_MANY_REQUESTS,
         content={"error": "Перевищено ліміт запитів. Спробуйте пізніше."},

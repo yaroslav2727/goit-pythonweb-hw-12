@@ -1,3 +1,4 @@
+from typing import Optional
 from pydantic import ConfigDict, EmailStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
@@ -7,6 +8,13 @@ class Settings(BaseSettings):
     JWT_SECRET: str
     JWT_ALGORITHM: str = "HS256"
     JWT_EXPIRATION_SECONDS: int = 3600
+
+    # Redis settings
+    REDIS_HOST: str = "localhost"
+    REDIS_PORT: int = 6379
+    REDIS_PASSWORD: Optional[str] = None
+    REDIS_DB: int = 0
+    REDIS_URL: Optional[str] = None
 
     MAIL_USERNAME: EmailStr
     MAIL_PASSWORD: str

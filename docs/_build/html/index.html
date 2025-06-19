@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FastAPI Contacts API Documentation &mdash; FastAPI Contacts API 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Authentication Endpoints" href="api/auth.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            FastAPI Contacts API
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/auth.html">Authentication Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/contacts.html">Contacts Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/users.html">Users Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api/utils.html">Utility Endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Data Schemas</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">FastAPI Contacts API</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">FastAPI Contacts API Documentation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="fastapi-contacts-api-documentation">
+<h1>FastAPI Contacts API Documentation<a class="headerlink" href="#fastapi-contacts-api-documentation" title="Link to this heading"></a></h1>
+<p>Welcome to the FastAPI Contacts API documentation. This API provides endpoints for managing contacts, user authentication, and user management.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api/auth.html">Authentication Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#register-user">Register User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#register-admin-user">Register Admin User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#login-user">Login User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#confirm-email">Confirm Email</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#request-email-verification">Request Email Verification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#request-password-reset">Request Password Reset</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/auth.html#confirm-password-reset">Confirm Password Reset</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/contacts.html">Contacts Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#create-contact">Create Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#get-contacts">Get Contacts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#get-contact-by-id">Get Contact by ID</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#update-contact">Update Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#delete-contact">Delete Contact</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/contacts.html#get-upcoming-birthdays">Get Upcoming Birthdays</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/users.html">Users Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#get-current-user">Get Current User</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#update-user-avatar">Update User Avatar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#delete-user-avatar">Delete User Avatar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#update-user-role">Update User Role</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#rate-limiting">Rate Limiting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api/users.html#admin-privileges">Admin Privileges</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="api/utils.html">Utility Endpoints</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api/utils.html#health-check">Health Check</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="schemas.html">Data Schemas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#user-schemas">User Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#contact-schemas">Contact Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#authentication-schemas">Authentication Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="schemas.html#validation-rules">Validation Rules</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="api-overview">
+<h2>API Overview<a class="headerlink" href="#api-overview" title="Link to this heading"></a></h2>
+<p>This FastAPI application provides a RESTful API for managing contacts with user authentication and authorization. The API includes the following main features:</p>
+<ul class="simple">
+<li><p>User registration and authentication</p></li>
+<li><p>Email verification and password reset</p></li>
+<li><p>Contact management (CRUD operations)</p></li>
+<li><p>User profile management</p></li>
+<li><p>Role-based access control (Admin/User)</p></li>
+<li><p>Avatar upload functionality</p></li>
+</ul>
+</section>
+<section id="base-url">
+<h2>Base URL<a class="headerlink" href="#base-url" title="Link to this heading"></a></h2>
+<p>All API endpoints are prefixed with <code class="docutils literal notranslate"><span class="pre">/api</span></code></p>
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
+<p>The API uses OAuth2 with JWT tokens for authentication. To access protected endpoints, include the JWT token in the Authorization header:</p>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="err">Authorization: Bearer &lt;your-jwt-token&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Register a new user account using <code class="docutils literal notranslate"><span class="pre">/api/auth/register</span></code></p></li>
+<li><p>Confirm your email address using the link sent to your email</p></li>
+<li><p>Login using <code class="docutils literal notranslate"><span class="pre">/api/auth/login</span></code> to get an access token</p></li>
+<li><p>Use the access token to access protected endpoints</p></li>
+</ol>
+</section>
+<section id="rate-limiting">
+<h2>Rate Limiting<a class="headerlink" href="#rate-limiting" title="Link to this heading"></a></h2>
+<p>Some endpoints have rate limiting applied:</p>
+<ul class="simple">
+<li><p>User profile endpoints: 3-5 requests per minute</p></li>
+<li><p>Other endpoints: Standard rate limits apply</p></li>
+</ul>
+</section>
+</section>
+<section id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api/auth.html" class="btn btn-neutral float-right" title="Authentication Endpoints" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Yaroslav Tovpyshko.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

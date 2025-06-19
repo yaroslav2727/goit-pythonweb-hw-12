@@ -5,6 +5,7 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+    container_name: postgres-hw12
     ports:
       - "5432:5432"
     networks:
@@ -16,14 +17,34 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: redis-hw12
+    ports:
+      - "6379:6379"
+    networks:
+      - app-network
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    command: redis-server --appendonly yes
+
   app:
     build: .
-    container_name: fastapi-app
+    container_name: fastapi-hw12
     ports:
       - "8000:8000"
 
     environment:
       - DB_URL=postgresql+asyncpg://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres_db:5432/contacts_db
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_DB=0
       - JWT_SECRET=${JWT_SECRET}
       - JWT_ALGORITHM=${JWT_ALGORITHM}
       - JWT_EXPIRATION_SECONDS=${JWT_EXPIRATION_SECONDS}
@@ -38,11 +59,15 @@ services:
       - POSTGRES_DB=${POSTGRES_DB}
       - POSTGRES_USER=${POSTGRES_USER}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - ADMIN_EMAIL=${ADMIN_EMAIL:-admin@example.com}
+      - ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
 
     networks:
       - app-network
     depends_on:
       postgres_db:
+        condition: service_healthy
+      redis:
         condition: service_healthy
 
 networks:
@@ -52,3 +77,4 @@ networks:
 
 volumes:
   postgres_data:
+  redis_data:
